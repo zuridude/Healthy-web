@@ -1,8 +1,17 @@
 const postSelector = 'div[data-testid="cellInnerDiv"]';
 const tweetTextSelector = 'div[data-testid="tweetText"]';
 const highlightColor = 'rgba(255, 0, 0, 0.2)'; // Less aggressive highlight
+const blurFilter = 'blur(11px)';
 
 var bannedWords = [];
+
+// TODO: Agregar un boton an los post para eliminar el blur, 
+// tambien sacar un ID de la fecha de los tweets, para no repetir informacion y que no se haga un loop infinito 
+function createShowButton(){
+    const showButton = document.createElement('button');
+    showButton.textContent = 'Mostrar Tweet';
+    return showButton;    
+}
 
 function getLocalStorageBannedWords(){
     chrome.storage.local.get(['bannedWords'], (result) => {
@@ -42,7 +51,12 @@ function processTweets() {
             if (!tweetText || bannedWords.length === 0) return;
         
         const hasBannedWord = containsBannedWord(tweetText.textContent, bannedWords);
-        element.style.background = hasBannedWord ? highlightColor : '';
+        if(hasBannedWord){
+            element.style.background = highlightColor;
+            element.style.filter = blurFilter;
+            element.style.pointerEvents = 'none'
+        }
+
     });
 }
 
