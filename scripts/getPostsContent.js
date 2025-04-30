@@ -11,9 +11,9 @@ switch (window.location.href) {
         postSelector = 'div[data-testid="cellInnerDiv"]';
         TextSelector = 'div[data-testid="tweetText"]';
         break;
-    case 'https://facebook.com/':
-        postSelector = 'div[data-testid="cellInnerDiv"]';
-        TextSelector = 'div[data-testid="tweetText"]';
+    case 'https://www.facebook.com/':
+        postSelector = 'div.x1yztbdb.x1n2onr6.xh8yej3.x1ja2u2z';//might change in the future :c
+        TextSelector = 'div[data-ad-rendering-role="story_message"]';
     default:
 
         break;
@@ -65,10 +65,10 @@ function processPosts() {
 
         const postsText = element.querySelector(TextSelector);
         if (!postsText || bannedWords.length === 0) return;
-        
+
         const hasBannedWord = containsBannedWord(postsText.textContent, bannedWords);
         if (hasBannedWord) {
-            element.querySelector('video')!= null ? element.querySelector('video').pause() : '';
+            element.querySelector('video') != null ? element.querySelector('video').pause() : '';
             element.style.background = highlightColor;
             element.style.pointerEvents = 'none'
             element.style.filter = blurFilter;
