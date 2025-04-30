@@ -70,9 +70,10 @@ function processPosts() {
         if (hasBannedWord) {
             element.querySelector('video')!= null ? element.querySelector('video').pause() : '';
             element.style.background = highlightColor;
-            //element.style.filter = blurFilter;
             element.style.pointerEvents = 'none'
             element.style.filter = blurFilter;
+            element.style.userSelect = "none";
+
         }
 
     });
