@@ -1,28 +1,28 @@
 {
-    "name": "Healthy Web",
-    "description": "Decreases ragebait, clickbait and negative posts from social networks feed",
-    "version": "1.0",
-    "manifest_version": 3,
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": "img/angry-48.png"
-    },
-    "icons": {
-      "48": "img/angry-48.png",
-      "128": "img/angry-128.png"
-    },
-    "content_scripts":[
-      {
-        "js":[
-          "scripts/getPostsContent.js"
-        ],
-        "matches":[
-          "https://www.facebook.com/",
-          "https://x.com/*"
-        ]
-      }
-    ],
-    "permissions":[
-      "storage"
-    ]
-  }
+  "name": "Healthy Web",
+  "description": "Decreases ragebait, clickbait and negative posts from social networks feed",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "img/angry-48.png"
+  },
+  "icons": {
+    "48": "img/angry-48.png",
+    "128": "img/angry-128.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/main.js"
+      ],
+      "matches": [
+        "https://www.facebook.com/",
+        "https://x.com/*"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
