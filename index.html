@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Healty App</title>
+  <link rel="stylesheet" href="/style.css">
   <script src="/scripts/bannedWords.js" defer></script>
 </head>
-<body style="width: 200px;">
+
+<body>
   <h1>Healthy Web</h1>
-    <p>
-      Decrease ragebait, clickbait and negative posts from social networks feed
-    </p>
-    <p>
-      <form action="">
-        <strong>Ban Words</strong>
-      <input type="text" id="dataInput" placeholder="Trump, MAGA, PRI, etc...." maxlength="10">
-      <button id="saveBtn">Don't Wanna see That!</button>
-      <hr>
-      <strong>Banned Words:</strong>
-      <ul id="bannedList">
-        <!-- banned words go here -->
-      </ul>
-      </form>
-      <button id="deleteBtn">Delete Words</button>
-    </p>
+  <p>
+    Decrease ragebait, clickbait and negative posts from social networks feed
+  </p>
+  <form action="">
+    <strong>Ban Words</strong>
+    <input type="text" id="dataInput" placeholder="Trump, MAGA, PRI, etc...." maxlength="10">
+    <button id="saveBtn">Don't Wanna see That!</button>
+    <hr>
+    <strong>Banned Words:</strong>
+    <ul id="bannedList">
+      <!-- banned words go here -->
+    </ul>
+  </form>
+  <button id="deleteBtn">Delete Words</button>
 </body>
+
 </html>
